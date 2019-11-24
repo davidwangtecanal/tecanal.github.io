@@ -8,9 +8,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 
     $routeProvider
         .when("/", {
-            title: "Driver Registration",
-            templateUrl: "templates/driver-registration.html",
-            controller: 'DriverRegistrationCtrl'    
+            title: "TeCanal Outreach Signup",
+            templateUrl: "templates/outreach-signup.html",
+            controller: 'OutreachSignupCtrl'
         })
         .when("/pinkheadphones", {
             title: "Volunteer Portal Admin Panel",
