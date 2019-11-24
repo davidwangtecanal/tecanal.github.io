@@ -8,11 +8,11 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 
     $routeProvider
         .when("/", {
-            title: "Volunteer @ TeCanal",
-            templateUrl: "templates/home.html",
-            controller: 'HomeCtrl'
+            title: "Driver Registration",
+            templateUrl: "templates/driver-registration.html",
+            controller: 'DriverRegistrationCtrl'    
         })
-        .when("/admin", {
+        .when("/pinkheadphones", {
             title: "Volunteer Portal Admin Panel",
             templateUrl: "templates/admin.html",
             controller: 'AdminCtrl'
@@ -30,10 +30,10 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
             templateUrl: "templates/leaderboard.html",
             controller: 'LeaderboardCtrl'
         })
-        .when("/outreach-signup", {
-            title: "TeCanal Outreach Signup",
-            templateUrl: "templates/outreach-signup.html",
-            controller: 'OutreachSignupCtrl'
+        .when("/home", {
+            title: "Volunteer @ TeCanal",
+            templateUrl: "templates/home.html",
+            controller: 'HomeCtrl'
         })
         .when("/driver-registration", {
             title: "Driver Registration",
@@ -248,24 +248,24 @@ app.controller("OutreachSignupCtrl", function ($scope, $firebaseArray, $firebase
                     $scope.driverHours.$loaded(function() {
                         // Add hours to driver history
                         if ($scope.driverHours.history) {
-                            $scope.driverHours.totalHours += 3;
+                            $scope.driverHours.totalHours += 4;
 
                             $scope.driverHours.history.push({
                                 "date": entry.sessionDate,
                                 "location": entry.destination,
                                 "role": "Driver",
-                                "hours": 3
+                                "hours": 4
                             });
                         }
                         // Create driver history
                         else {
-                            $scope.driverHours.totalHours = 3;
+                            $scope.driverHours.totalHours = 4;
 
                             $scope.driverHours.history = [{
                                 "date": entry.sessionDate,
                                 "location": entry.destination,
                                 "role": "Driver",
-                                "hours": 3
+                                "hours": 4
                             }];
                         }
 
@@ -285,25 +285,25 @@ app.controller("OutreachSignupCtrl", function ($scope, $firebaseArray, $firebase
                             $scope.volunteerHours.$loaded(function() {
                                 // Add hours to volunteer history
                                 if ($scope.volunteerHours.history) {
-                                    $scope.volunteerHours.totalHours += 2;
+                                    $scope.volunteerHours.totalHours += 3;
 
                                     // Add hours as volunteer
                                     $scope.volunteerHours.history.push({
                                         "date": entry.sessionDate,
                                         "location": entry.destination,
                                         "role": "Volunteer",
-                                        "hours": 2
+                                        "hours": 3
                                     });
                                 }
                                 // Create volunteer history
                                 else {
-                                    $scope.volunteerHours.totalHours = 2;
+                                    $scope.volunteerHours.totalHours = 3;
 
                                     $scope.volunteerHours.history = [{
                                         "date": entry.sessionDate,
                                         "location": entry.destination,
                                         "role": "Volunteer",
-                                        "hours": 2
+                                        "hours": 3
                                     }];
                                 }
 
